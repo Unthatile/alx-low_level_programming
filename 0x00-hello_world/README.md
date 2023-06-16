@@ -6,13 +6,5 @@
 The C file name will be saved in the variable $CFILE
 The output file should be named the same as the C file, but with the extension .s instead of .c.
 3. gcc $CFILE -o cisfun - This command will compile the C file saved in the variable $CFILE and create an executable named cisfun.
-4. #include <stdio.h>
-
-int main(void)
-{
-    puts("\"Programming is like building a multilingual puzzle");
-    puts("followed by a new line.\"");
-    return (0);
-} 
-
-This program uses the function puts to print the desired string. The first puts statement prints the first half of the string, while the second puts statement prints the second half of the string. The \n character is not needed since puts automatically adds a newline character at the end of the string.
+4. This program uses the function puts to print the desired string. The first puts statement prints the first half of the string, while the second puts statement prints the second half of the string. The \n character is not needed since puts automatically adds a newline character at the end of the string.
+5. This program uses the function printf to print the string “with proper grammar, but the outcome is a piece of art,” followed by a new line character. The program returns 0 and compiles without warning when using the -Wall gcc option.
