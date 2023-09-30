@@ -1,30 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
- * main - adds positive numbers.
- * @argc: number of command line arguments.
- * @argv: array that contains the program command line arguments.
- * Return: 0 - success.
- */
+ * main - program that adds positive numbers.
+ * @argc: number of arguments
+ * @argv: array with the arguments
+ *
+ * Return: always 0
+ **/
 
 int main(int argc, char *argv[])
 {
-	int i, j, add = 0;
+	int i, suma = 0, res = 0;
+	char c[] = "Error", *find_letter;
 
-	for (i = 1; i < argc; i++)
+	if (argc > 1)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		for (i = 1; i < argc; i++)
 		{
-			if (!isdigit(argv[i][j]))
+			find_letter = argv[i];
+			while (*find_letter != 0)
 			{
-				printf("Error\n");
-				return (1);
+				if (*find_letter < 47 || *find_letter > 57)
+				{
+					printf("%s\n", c);
+					return (1);
+				}
+				find_letter++;
 			}
+			res = atoi(argv[i]);
+			suma += res;
 		}
-		add += atoi(argv[i]);
+		printf("%d\n", suma);
 	}
-	printf("%d\n", add);
+	else
+		printf("%d\n", 0);
 	return (0);
 }
